@@ -28,7 +28,7 @@ default: &default
 development:
   <<: *default
   database: module5_development
-  username: postgres
+  username: 'postgres'
   password: 'aqil1'
   host: localhost
   port: 5433
@@ -67,7 +67,7 @@ test:
   database: module5_test
   username: 'postgres'
   password: 'aqil1'
-  host: localhost
+  host: postgres
   port: 5433
 
 # As with config/credentials.yml, you never want to store sensitive information,
@@ -95,5 +95,5 @@ production:
   database: module5_production
   username: module5
   password: <%= ENV["MODULE5_DATABASE_PASSWORD"] %>
-  host: localhost
+  host: postgres
   port: 5433
