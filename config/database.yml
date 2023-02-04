@@ -15,20 +15,24 @@
 # gem "pg"
 #
 default: &default
-  adapter: postgresql
+ adapter: postgresql
   encoding: unicode
+   
   username: postgres
-  password: aqil1
-  host: localhost
-port: 5433
+  password: 'aqil1'
+ 
+  port: 5433
+ database: postgres 
+ timeout: 5000
+   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+ 
 
 development:
   <<: *default
   database: module5_development
-  port: 5433
+
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -62,8 +66,7 @@ development:
 test:
   <<: *default
   database: module5_test
-  port: 5433
-
+  
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
