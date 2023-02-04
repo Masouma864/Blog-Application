@@ -16,15 +16,13 @@
 #
 default: &default
  adapter: postgresql
-encoding: unicode
-   
-username: postgres
-password: 'aqil1'
- 
-port: 5433
-database: postgres 
-timeout: 5000
-   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+ encoding: unicode  
+ username: postgres
+ password: 'aqil1'
+ port: 5433
+ database: postgres 
+ timeout: 5000
+ pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
  
