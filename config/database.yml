@@ -18,7 +18,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   username: postgres
-  password: aqil1
+  password: 'aqil1'
   host: localhost
   port: 5433
   # For details on connection pooling, see Rails configuration guide
@@ -29,7 +29,7 @@ development:
   <<: *default
   database: module5_development
   username: postgres
-  password: aqil1
+  password: 'aqil1'
   host: localhost
   port: 5433
   # The specified database role being used to connect to postgres.
@@ -66,7 +66,7 @@ test:
   <<: *default
   database: module5_test
   username: postgres
-  password: aqil1
+  password: 'aqil1'
   host: localhost
   port: 5433
 
