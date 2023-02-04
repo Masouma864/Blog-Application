@@ -20,7 +20,7 @@ default: &default
   username: postgres
   password: aqil1
   host: localhost
-  port: 5433
+
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -28,9 +28,6 @@ default: &default
 development:
   <<: *default
   database: module5_development
-  username: postgres
-  password: aqil1
-  host: localhost
   port: 5433
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -48,7 +45,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  #port: 5433
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -65,9 +62,6 @@ development:
 test:
   <<: *default
   database: module5_test
-  username: postgres
-  password: aqil1
-  host: localhost
   port: 5433
 
 # As with config/credentials.yml, you never want to store sensitive information,
