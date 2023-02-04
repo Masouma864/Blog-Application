@@ -1,8 +1,8 @@
 gem 'rubocop', '>= 1.0', '< 2.0'
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-gem 'rspec-rails'
 gem 'rails-controller-testing'
+gem 'rspec-rails'
 
 
 ruby '3.1.3'
@@ -74,4 +74,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-gem 'rubocop', '>= 1.0', '< 2.0'
