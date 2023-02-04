@@ -2,7 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   username: postgres
-  password: postgres
+  password: aqil1
   host: localhost
   port: 5432
 
