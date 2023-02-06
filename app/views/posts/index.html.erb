@@ -1,29 +1,8 @@
-<h1> Posts </h1>
-<p> Lists all posts for Joseph</p>
-<div>
-    <section class="main_post">
-
-    <div>
-        <img src="<%= @user.photo %>" alt="image">
-    </div>
-
-        <div>
-            <h2>
-                <%= @user.name%>
-            </h2>
-            <p class="self-end text-xs">
-                Number of posts: <%= @user.posts_counter || 0%>
-            </p>
-        </div> 
-        <div>
-            <% @user.bio %>
-        </div>
-
-    </section>
-
-    <section>
-        <% @user.posts.each do |post| %>
-            <%= render parial: 'post', locals: {post: post} %>
-        <% end %>
-    </section>
+<div class="post-container">
+  <%= render partial: 'shared/user-card', locals: { user: @user } %>
+  <% @user.recent_posts.each_with_index do |post, index| %>
+    <%= link_to post_id_path(@user, post), class: 'post-card-link' do %>
+      <%= render 'shared/post-card', post: post, id: post.id, brief: true, comment: true, all: false %>
+    <% end %>
+  <% end %>
 </div>

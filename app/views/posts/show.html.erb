@@ -1,37 +1,3 @@
-<h1>Posts</h1>
-<p> Shows info for Joseph posts </p>
-<div> 
-
-    <section class="main_post">
-      <div>
-        <p>  
-            Post #<%= @post.id %> by @post.user.name%
-        </p>
-
-        <p> 
-            <span>
-                Comments: <%= @post.comments_counter || 0 %>,
-                Likes: <%= @post.likes_counter || 0 %>
-            </span
-        </p>
-      </div>
-        <p><%= @post.text%></p>
-    </section>
-
-    <div class="border-2 p-3">
-        <% @post.recent_comments.each do |comment| %>
-            <div>
-                <p> 
-                <span>
-                    <%= comment.user.name %>:
-                </span>
-                <span>
-                    <%= comment.text %>
-                </span>
-                </p>
-            </div>
-
-        <% end %>
-    </div>
-
+<div class="post-container">
+  <%= render 'shared/post-card', post: @post, id: @post.id, brief: false, comment: true, all: true %>
 </div>
