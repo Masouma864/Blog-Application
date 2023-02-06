@@ -26,12 +26,30 @@
       border-radius: 5px;
       animation: slide-in 0.8s ease-in-out;
     }
+    .post-item__comment{
+        padding: 5px;
+        border-radius: 2px;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+    .post-item__interactions{
+        margin: 10px 5px;
+        font-weight: bold;
+    }
   
     .user-list-item {
-      width: 100%;
+      width: 90%;
       text-align: start;
       display: flex;
       align-items: center;
+      padding-right:3px;
+      padding-left: 10px;
+    }
+    .post-item__detail{
+        margin-top: 5px;
+        font-size: medium;
+        font-family: 'Courier New', Courier, monospace;
+
     }
   
     .user-list-item__image {
