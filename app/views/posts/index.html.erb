@@ -3,6 +3,11 @@
   <% @user.recent_posts.each_with_index do |post, index| %>
     <%= link_to post_id_path(@user, post), class: 'post-card-link' do %>
       <%= render 'shared/post-card', post: post, id: post.id, brief: true, comment: true, all: false %>
+      <% post.recent_comments.each do |comment| %>
+        <div id="comments">
+         <%= @user.name%>: <%= comment.text%>
+        </div>
+    <% end %>
     <% end %>
   <% end %>
 </div>
