@@ -45,6 +45,7 @@ Blog app is a project built with ruby on rails(ROR). This web app serves as an o
 - **Create new posts**
 - **Like posts**
 - **Comment on posts**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,7 +81,9 @@ To test your code for errors, rub the following
 <!-- FUTURE FEATURES -->
 
 ## :telescope: Future Features <a name="future-features"></a>
-- [ ] **Add UI**
+-  ** [User-posting]**
+-  **[commenting-feature]**
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
@@ -88,6 +91,7 @@ To test your code for errors, rub the following
 ## :handshake: Contributing <a name="contributing"></a>
 Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](../../issues/).
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- SUPPORT -->

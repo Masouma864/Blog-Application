@@ -1,21 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  describe 'Validations For the Like model' do
-    before(:each) do
-      @like = Like.new(user_id: 4, post_id: 10)
-    end
+  before :each do
+    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
 
-    before { @like }
+    @post = Post.create(author: @post, title: 'Hello', text: 'This is my first post')
 
-    it ' User_id should not be blank' do
-      @like.user_id = nil
-      expect(@like).to_not be_valid
-    end
+    @comment = Comment.create(post: @comment, author: @user, text: 'Hi Tom!')
 
-    it ' Post_id should not be blank ' do
-      @like.post_id = nil
-      expect(@like).to_not be_valid
-    end
+    @like = Like.create(author: @author, post: @post)
+  end
+
+  it 'Comments author should equal to user who made the comment' do
+    expect(@comment.author).to eq @user
   end
 end

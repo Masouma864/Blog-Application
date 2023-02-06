@@ -1,8 +1,11 @@
-<section >
-    <h1 >All Users</h1>
-    <div>
-        <% @users.each do |user| %>
-            <%= render partial: 'user', locals: {user: user} %>
-        <% end %>
+<%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+<h1>Users</h1>
+<div class="user-list d-flex flex-wrap">
+  <% @all_users.each do |user| %>
+    <div class="user-card m-2">
+      <%= link_to user_id_path(user.id) do %>
+        <%= render partial: 'shared/user-card', locals: { user: user } %>
+      <% end %>
     </div>
-</section>
+  <% end %>
+</div>
