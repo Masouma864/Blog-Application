@@ -5,7 +5,7 @@
     <section class="main_post">
       <div>
         <p>  
-            Posst #<%= @post.id %> by @post.author.name%
+            Post #<%= @post.id %> by @post.user.name%
         </p>
 
         <p> 
@@ -15,7 +15,7 @@
             </span
         </p>
       </div>
-        <p><%= @post.Text%></p>
+        <p><%= @post.text%></p>
     </section>
 
     <div class="border-2 p-3">
@@ -23,7 +23,7 @@
             <div>
                 <p> 
                 <span>
-                    <%= comment.author.name %>:
+                    <%= comment.user.name %>:
                 </span>
                 <span>
                     <%= comment.text %>

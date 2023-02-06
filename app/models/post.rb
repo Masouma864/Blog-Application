@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :author, class_name: 'User'
+  belongs_to :user
   has_many :comments
   has_many :likes
   after_save :update_post_counter
@@ -13,7 +13,7 @@ class Post < ApplicationRecord
   def recent_comments
     comments.order(created_at: :desc).limit(5)
   end
-  validates :Title, presence: true, length: { in: 4..250 }
+  validates :title, presence: true, length: { in: 4..250 }
   validates :comment_count, presence: true, numericality: { only_integer: true }
   validates :like_counter, presence: true, numericality: { only_integer: true }
 end
