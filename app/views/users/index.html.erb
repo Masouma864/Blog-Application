@@ -1,2 +1,11 @@
+<%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
 <h1>Users</h1>
-<p>Lists all users</p>
+<div class="user-list d-flex flex-wrap">
+  <% @all_users.each do |user| %>
+    <div class="user-card m-2">
+      <%= link_to user_id_path(user.id) do %>
+        <%= render partial: 'shared/user-card', locals: { user: user } %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

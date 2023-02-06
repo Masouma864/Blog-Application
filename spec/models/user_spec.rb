@@ -1,26 +1,40 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'Validations For the user model' do
-    before(:each) do
-      subject { User.new(name: 'Joseph', posts_counter: 3) }
+  context 'Tests For #User Model' do
+    before :each do
+      @user = User.create(name: 'Aakash', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'My name is Aakash')
     end
 
-    before { subject.save }
+    describe 'Unit Test For @user object' do
+      it 'it will check @user should not be valid' do
+        expect(@user).to be_valid
+      end
 
-    it 'Name must not be blank' do
-      subject.name = nil
-      expect(subject).to_not be_valid
+      it 'it will check name should be "Aakash"' do
+        expect(@user.name).to eql 'Aakash'
+      end
     end
 
-    it 'CommentsCounter must be an integer' do
-      subject.posts_counter = ''
-      expect(subject).to_not be_valid
-    end
+    describe 'Unit Test For @user object methods' do
+      it 'it will check @user recents post should be []' do
+        expect(@user.recent_posts.length).to eql 0
+      end
 
-    it 'CommentsCounter must be an integer greater than or equal to zero' do
-      subject.posts_counter = -1
-      expect(subject).to_not be_valid
+      it 'is not valid without a name' do
+        @user.name = nil
+        expect(@user).to_not be_valid
+      end
+
+      it 'has it\'s posts_counter greater than or equal to 0' do
+        @user.posts_counter = -10
+        expect(@user).to_not be_valid
+      end
+
+      it 'has it\'s posts_counter set to 0 by default' do
+        expect(@user.posts_counter).to eq 0
+        expect(@user).to be_valid
+      end
     end
   end
 end

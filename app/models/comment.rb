@@ -1,11 +1,13 @@
 class Comment < ApplicationRecord
   belongs_to :author, class_name: 'User'
-  belongs_to :post
-  after_save :update_comments_counter
+  belongs_to :post, class_name: 'Post'
+  after_save :comment_counter
 
-  private
+  def comment_counter
+    post.update(comments_counter: post.comments.all.length)
+  end
 
-  def update_comments_counter
-    post.increment!(:comments_counter)
+  def user(id)
+    User.find(id)
   end
 end
