@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
   def index
     @all_users = User.all
+    @user = current_user
   end
 
   def show
-    @user = User.find(request.parameters[:id].to_i)
-    @brief = true
-    @comment = true
-  end
+    @user = User.find(request.parameters[:id])
 end
