@@ -6,7 +6,11 @@ gem 'rspec-rails'
 
 ruby '3.1.3'
 gem "bullet", group: "development"
-
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
