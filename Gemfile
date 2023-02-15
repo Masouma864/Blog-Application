@@ -2,7 +2,8 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'rails-controller-testing'
-gem 'rspec-rails'
+require 'rspec/rails'
+require 'capybara'
 
 ruby '3.1.3'
 gem "bullet", group: "development"
