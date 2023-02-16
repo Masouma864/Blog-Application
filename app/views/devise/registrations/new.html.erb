@@ -1,15 +1,14 @@
-<h2>Sign up</h2>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <h3 class="h3 mb-3 fw-normal">Sign up</h3>
   <%= render "devise/shared/error_messages", resource: resource %>
-  <div class="field">
+  <div class="field form-floating">
   <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "User Name" %>
 </div>
-  <div class="field">
+  <div class="field form-floating">
   <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email" %>
   </div>
 
-  <div class="field">
+  <div class="field form-floating">
    
     <% if @minimum_password_length %>
    
@@ -17,7 +16,7 @@
     <%= f.password_field :password, autocomplete: "new-password", placeholder: "Enter minimum 6 digit password" %>
   </div>
 
-  <div class="field">
+  <div class="field form-floating">
   <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Re-enter the password" %>
   </div>
 
