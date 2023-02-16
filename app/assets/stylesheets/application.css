@@ -13,16 +13,4 @@
  *= require_tree .
  *= require_self
  */
- .field {
-    color: #5c3c3c;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: normal;
- }
-
- .actions {
-    color: #5c3c3c;
-    font-size: 30px;
-    font-weight: 700;
-    font-family: normal;
- }
+ 
