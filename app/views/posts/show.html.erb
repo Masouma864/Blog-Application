@@ -1,9 +1,5 @@
-<div class="post-container">
-<li class="post">
-<h3 class="heading"><%= @post.title %></h3>
-<p class="post-item__interactions">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></p>
-<p class="post-item__detail"><%= @post.text %></p>
-</li>
+<div class="p-container">
+<%= render 'shared/post-card', post: @post, user: @user, index: @post.id, brief: false, comment: true, all: true %>
   <%= link_to 'Comment ', "#{request.url}/comments/new", class: 'comment-btn' %>
   <%= link_to 'Like ', "#{request.url}/likes/new", class: 'comment-btn' %>
   <% if can? :destroy, @post %>

@@ -9,8 +9,8 @@ class Ability
       can :manage, :all
     else
       can :read, :all
-      can :destroy, Post, author: user
-      can :destroy, Comment, author: user
+      can :manage, Post, author: user
+      can :manage, Comment, author: user
     end
     # Define abilities for the user here. For example:
     #
