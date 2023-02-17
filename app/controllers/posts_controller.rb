@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
     @user = User.find(request.parameters[:user_id])
   end
@@ -19,5 +20,11 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(request.parameters[:id])
     @user = User.find(params[:user_id])
+  end
+
+  def destroy
+    @post = Post.find(request.parameters[:id])
+    @post.destroy
+    redirect_to all_post_path(params[:user_id])
   end
 end

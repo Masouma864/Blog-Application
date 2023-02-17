@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.3'
 
 # RSpec testing library
+gem 'cancancan'
 gem 'rspec-rails'
 gem 'rspec-support'
 

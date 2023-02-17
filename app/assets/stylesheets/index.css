@@ -3,12 +3,10 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
-
 a {
   text-decoration: none;
   color: black;
 }
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -18,37 +16,49 @@ a {
   color: #fff;
   margin-bottom: 30px;
 }
-
 h1 {
   margin: 0;
 }
-
-.new-post {
-  color: #fff;
-  text-decoration: none;
-  background-color: #0073b1;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  margin-left: 1rem;
+.button_to {
+  width: auto;
+  margin: 0;
 }
-
+.welcome-section {
+  text-align: center;
+}
+.welcome-header {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+.welcome-header span {
+  color: lightgreen;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @media (max-width: 600px) {
   .navbar {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
   }
-
   h1 {
     margin-bottom: 1rem;
   }
-
-  .new-post {
-    margin: 1rem 0;
-    width: 100%;
-    text-align: center;
+  .userImg {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
   }
 }
-
 @media only screen and (max-width: 767px) {
   .user-list {
     display: flex;
@@ -57,7 +67,6 @@ h1 {
     justify-content: center;
     padding: 0;
   }
-
   .user-card {
     width: 97%;
     background: white;
@@ -66,34 +75,29 @@ h1 {
     border-radius: 5px;
     animation: slide-in 0.8s ease-in-out;
   }
-
   .user-list-item {
     width: 100%;
     text-align: start;
     display: flex;
     align-items: center;
   }
-
   .user-list-item__image {
     width: 90px;
     height: 90px;
     border-radius: 50%;
     flex: 1;
   }
-
   .user-list-item__name {
     flex: 3;
     padding-left: 16px;
     text-decoration: none;
   }
 }
-
 @keyframes slide-in {
   from {
     transform: translateY(50px);
     opacity: 0;
   }
-
   to {
     transform: translateY(0);
     opacity: 1;
