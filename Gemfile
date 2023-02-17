@@ -6,6 +6,7 @@ ruby '3.1.3'
 # RSpec testing library
 gem 'rspec-rails'
 gem 'rspec-support'
+gem 'cancancan'
 
 # Rubocop linter library
 gem 'rubocop', '>= 1.0', '< 2.0'
