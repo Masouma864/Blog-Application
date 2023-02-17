@@ -8,6 +8,9 @@ gem 'cancancan'
 gem 'rspec-rails'
 gem 'rspec-support'
 
+gem 'jwt'
+gem 'devise-jwt'
+
 # Rubocop linter library
 gem 'rubocop', '>= 1.0', '< 2.0'
 
