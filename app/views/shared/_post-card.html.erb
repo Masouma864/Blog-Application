@@ -2,19 +2,26 @@
 
 <li class="post-item card">
   <h3 class="post-item__heading"><%= post.title %></h3>
-  <p class="post-item__detail"><%= brief ? post.text[0..120]... : post.text %></p>
   <p class="post-item__interactions">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+  <p class="post-item__detail"><%= brief ? post.text[0..120]... : post.text %></p>
 </li>
 
 <% if comment %>
   <ul class="post-item__comments-container">
     <% if all %>
       <% post.all_comments.each do |comment| %>
-        <li class="post-item__comment"><%= comment.user(comment.author_id).name %>: <%= comment.text %></li>
+        <li class="post-item__comment">
+        <%= comment.user(comment.author_id).name %>: <%= comment.text %>
+        <% if can? :destroy, comment %>
+          <%= button_to "Delete Comment", comment_destroy_path(@user.id, post.id, comment.id), method: :delete, class: "btn btn-outline-danger" %>
+        <% end %>
+      </li>
       <% end %>
     <% else %>
       <% post.recent_comments.each do |comment| %>
-        <li class="post-item__comment"><%= comment.user(comment.author_id).name %>: <%= comment.text %></li>
+        <li class="post-item__comment">
+        <%= comment.user(comment.author_id).name %>: <%= comment.text %>
+      </li>
       <% end %>
     <% end %>
   </ul>
