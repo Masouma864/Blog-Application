@@ -1,9 +1,15 @@
 <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
 <div class="navbar">
-<h1>Users</h1>
-<%# <%= link_to 'Create a Post ', post_new_path(@user.id), class: 'new-post' %>
-<%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "link-button reload" %>
+<img class="userImg" src=<%= @user.photo %> alt="User Image">
+<%= button_to "Logout", destroy_user_session_path, method: :delete, class: "btn btn-outline-primary reload" %>
 </div>
+
+<% if user_signed_in? %>
+  <div class="welcome-section">
+    <p class="welcome-header">Welcome <span class="user-name"><%= current_user.name %></span></p>
+  </div>
+<% end %>
+
 <div class="user-list d-flex flex-wrap">
   <% @all_users.each do |user| %>
     <div class="user-card m-2">
