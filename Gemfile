@@ -3,19 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
-# RSpec testing library
-gem 'cancancan'
-gem 'rspec-rails'
-gem 'rspec-support'
-
-gem 'jwt'
-gem 'devise-jwt'
-
 # Rubocop linter library
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.4'
+gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -86,3 +78,11 @@ gem 'database_cleaner'
 gem 'devise'
 gem 'letter_opener'
 gem 'rails-controller-testing'
+
+# RSpec testing library
+gem 'cancancan'
+gem 'rspec-rails'
+gem 'rspec-support'
+
+gem 'jwt'
+gem 'devise-jwt'
