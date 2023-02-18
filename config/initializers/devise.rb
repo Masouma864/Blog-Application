@@ -12,7 +12,7 @@ Devise.setup do |config|
 
 
   config.jwt do |jwt|
-    jwt.secret = Rails.application.credentials.fetch(:secret_key_base)
+    jwt.secret = Rails.application.credentials.read
     jwt.dispatch_requests = [
       ['POST', %r{^/users/sign_in$}]
     ]
@@ -316,7 +316,7 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
-
+  config.secret_key = '<%= ENV["SECRET_KEY_BASE"] %>'
   # ==> Configuration for :registerable
 
   # When set to false, does not sign a user in automatically after their password is

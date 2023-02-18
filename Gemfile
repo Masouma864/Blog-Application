@@ -84,5 +84,5 @@ gem 'cancancan'
 gem 'rspec-rails'
 gem 'rspec-support'
 
-gem 'jwt'
 gem 'devise-jwt'
+gem 'jwt'
